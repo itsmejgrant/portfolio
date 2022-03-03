@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import debounce from '../utils/debounce'
 import Head from 'next/head'
 import dynamic from 'next/dynamic';
 import styles from '../styles/Home.module.css'
@@ -17,9 +18,9 @@ export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
-    window.addEventListener('scroll', () => {
+    window.addEventListener('scroll', debounce(() => {
       window.scrollY > 200 ? setIsScrolled(true) : setIsScrolled(false)
-    })
+    }), 250)
   }, [])
 
   return (
