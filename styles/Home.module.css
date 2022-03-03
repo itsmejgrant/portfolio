@@ -3,6 +3,11 @@
   align-items: center;
   justify-content: space-between;
   padding: 20px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
 }
 
 .title {
@@ -18,3 +23,10 @@
   font-size: 1.125rem;
 }
 
+.link {
+  border-bottom: 2px solid transparent;
+}
+
+.link:hover {
+  border-color: var(--brand);
+}
