@@ -1,9 +1,15 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Head from 'next/head'
+import dynamic from 'next/dynamic';
 import styles from '../styles/Home.module.css'
 
+const TextLogo = dynamic(
+  () => import('../components/TextScrambler'), 
+  { ssr: false }
+)
+
 export default function Home() {
-  const [logo, setLogo] = useState('Joe Grant');
+  const [textLogo, setTextLogo] = useState('Joe Grant');
 
   return (
     <>
@@ -14,7 +20,9 @@ export default function Home() {
       </Head>
 
       <header className={`container ${styles.header}`}>
-        <h1 className={styles.title}>{logo}</h1>
+        <h1 className={styles.title}>
+          <TextLogo text={textLogo} setText={setTextLogo} />
+        </h1>
         <nav className={styles.nav}>
           <ul>
             <li>Blog</li>
