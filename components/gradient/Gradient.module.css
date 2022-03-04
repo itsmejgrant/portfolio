@@ -1,0 +1,29 @@
+.gradientWrapper {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow-x: hidden;
+  filter: blur(5rem);
+}
+
+.gradientOne {
+  position: absolute;
+  top: 0;
+  left: 10%;
+  height: 60vh;
+  width: 80vw;
+  border-radius: 120% 80% 120% 45%;
+  opacity: 0.5;
+  background: linear-gradient(to right, transparent, var(--gradient-one));
+}
+
+.gradientTwo {
+  position: absolute;
+  bottom: 20%;
+  right: 0;
+  height: 60vh;
+  width: 75vw;
+  border-radius: 90% 90% 110% 60%;
+  opacity: 0.7;
+  background: var(--gradient-two);
+}

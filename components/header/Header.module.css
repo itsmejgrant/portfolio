@@ -2,17 +2,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 0;
+  padding-top: var(--space-sm);
+  padding-bottom: var(--space-sm);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   margin: 0 auto;
-}
-
-.title {
-  font-weight: 600;
-  font-size: 1.25rem;
 }
 
 .nav > ul {
@@ -23,8 +19,16 @@
   font-size: 1.125rem;
 }
 
+.title {
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--text);
+}
+
 .link {
   border-bottom: 2px solid transparent;
+  padding-bottom: 3px;
+  transition: var(--transition-default);
 }
 
 .link:hover {

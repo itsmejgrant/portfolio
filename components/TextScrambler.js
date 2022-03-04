@@ -6,6 +6,7 @@ const TextScrambler = ({ text, setText }) => {
 
   useEffect(() => {
     scramblerRef.current.scramble(text, setText)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [setText])
 
   return (

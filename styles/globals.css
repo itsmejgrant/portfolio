@@ -1,3 +1,22 @@
+:root {
+  --bg: #f6f6f6;
+  --text: #02071b;
+  --gradient-one: salmon;
+  --gradient-two: rgb(235, 247, 73);
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 3rem;
+
+  --transition-slow: all 0.5s ease;
+  --transition-default: all 0.3s ease;
+  --transition-fast: all 0.2s ease;
+}
+
+[data-theme='dark'] {
+  --bg: #02071b;
+  --text: #f6f6f6;
+}
+
 html,
 body {
   padding: 0;
@@ -5,6 +24,11 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
 }
 
 a {
@@ -19,4 +43,11 @@ a {
 .container {
   max-width: 1280px;
   margin: 0 auto;
+  padding: 0 var(--space-sm);
+}
+
+@media screen and (min-width: 1312px) {
+  .container {
+    padding: 0;
+  }
 }
