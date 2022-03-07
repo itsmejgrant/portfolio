@@ -15,7 +15,8 @@ const Gradient = () => {
         x:() => gsap.utils.random(-300, 300),
         y:() => gsap.utils.random(-300, 300),
         rotate: () => gsap.utils.random(0, 180),
-        repeatRefresh: 1
+        repeatRefresh: true,
+        repeat: -1
       })
     })
   }, [])
@@ -24,7 +25,7 @@ const Gradient = () => {
     <div ref={gradientRef} className={styles.gradientWrapper}>
       <div data-gradient className={styles.gradientOne}></div>
       <div data-gradient className={styles.gradientTwo}></div>
-      <div></div>
+      <div data-gradient className={styles.ball}></div>
     </div>
   )
 }
