@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import debounce from '../../utils/debounce'
 import dynamic from 'next/dynamic';
 import styles from './Header.module.css'
+import ThemeToggle from '../themeToggle';
 
 /**
  * Dynamic import due to being a browser-based library
@@ -34,6 +35,7 @@ const Header = () => {
             <li><a className={styles.link} href="#">Home</a></li>
             <li><a className={styles.link} href="#">About</a></li>
             <li><a className={styles.link} href="#">Blog</a></li>
+            <li><ThemeToggle /></li>
           </ul> 
         </nav>
       </header>
