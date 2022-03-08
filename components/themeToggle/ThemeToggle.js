@@ -1,5 +1,7 @@
 import { useTheme } from 'next-themes'
 import styles from './ThemeToggle.module.css'
+import SunIcon from './SunIcon'
+import MoonIcon from './MoonIcon'
 
 const ThemeToggle = () => {
   const { theme, setTheme} = useTheme();
@@ -10,7 +12,9 @@ const ThemeToggle = () => {
   }
 
   return (
-    <button onClick={toggleTheme}>Theme is {theme}</button>
+   <button className={styles.button} onClick={toggleTheme}>
+    {theme === 'light' ? <MoonIcon /> : <SunIcon />}
+   </button>
   )
 }
 

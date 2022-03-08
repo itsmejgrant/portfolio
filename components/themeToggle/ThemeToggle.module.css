@@ -1,0 +1,11 @@
+.button {
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.button:hover > svg {
+  fill: var(--text);
+}
