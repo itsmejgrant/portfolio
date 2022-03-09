@@ -1,6 +1,7 @@
 .header {
-  padding: 8rem 0;
-  max-width: 900px;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  max-width: 1000px;
 }
 
 .title {
