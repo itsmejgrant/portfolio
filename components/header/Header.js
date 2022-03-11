@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import debounce from '../../utils/debounce'
 import dynamic from 'next/dynamic';
+import Link from 'next/link'
 import styles from './Header.module.css'
 import ThemeToggle from '../themeToggle';
 
@@ -32,9 +33,9 @@ const Header = () => {
         {isScrolled && <a className={styles.title} href="#top"><TextLogo text={backToTop} setText={setBackToTop} /></a>}
         <nav className={styles.nav}>
           <ul>
-            <li><a className={styles.link} href="#">Home</a></li>
-            <li><a className={styles.link} href="#">About</a></li>
-            <li><a className={styles.link} href="#">Blog</a></li>
+            <li><Link className={styles.link} href="/">Home</Link></li>
+            <li><Link className={styles.link} href="/about">About</Link></li>
+            <li><Link className={styles.link} href="#">Blog</Link></li>
             <li><ThemeToggle /></li>
           </ul> 
         </nav>
