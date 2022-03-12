@@ -1,5 +1,4 @@
-import { useState, useEffect } from 'react'
-import debounce from '../../utils/debounce'
+import { useState } from 'react'
 import dynamic from 'next/dynamic';
 import Link from 'next/link'
 import Head from 'next/head'
@@ -16,14 +15,6 @@ const TextLogo = dynamic(
 
 const Header = () => {
   const [textLogo, setTextLogo] = useState('Joe Grant');
-  const [backToTop, setBackToTop] = useState('Back To Top');
-  const [isScrolled, setIsScrolled] = useState(false)
-
-  useEffect(() => {
-    window.addEventListener('scroll', debounce(() => {
-      window.scrollY > 200 ? setIsScrolled(true) : setIsScrolled(false)
-    }), 250)
-  }, [])
 
   return (
     <>
@@ -34,10 +25,9 @@ const Header = () => {
       </Head>
 
       <header className={`container ${styles.header}`}>
-        {! isScrolled && <h1 className={styles.title}>
+        <h1 className={styles.title}>
           <TextLogo text={textLogo} setText={setTextLogo} />
-        </h1>}
-        {isScrolled && <a className={styles.title} href="#top"><TextLogo text={backToTop} setText={setBackToTop} /></a>}
+        </h1>
         <nav className={styles.nav}>
           <ul>
             <li><Link className={styles.link} href="/">Home</Link></li>
@@ -47,8 +37,6 @@ const Header = () => {
           </ul> 
         </nav>
       </header>
-
-
     </>
   )
 }
