@@ -1,8 +1,9 @@
-import { useEffect, useRef }  from 'react'
+import { useState, useEffect, useRef }  from 'react'
 import Scrambler from 'scrambling-text'
 
-const TextScrambler = ({ text, setText }) => {
+const TextScrambler = ({ text, setText, styles }) => {
   const scramblerRef = useRef(new Scrambler());
+  const [text, setText] = useState('halfcab');
 
   useEffect(() => {
     scramblerRef.current.scramble(text, setText)
@@ -10,7 +11,7 @@ const TextScrambler = ({ text, setText }) => {
   }, [])
 
   return (
-    <>{text}</>
+    <h1 className={styles}>{text}</h1>
   )
 }
 

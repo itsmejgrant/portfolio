@@ -1,0 +1,70 @@
+/* .link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm);
+  position: relative;
+  font-weight: bold;
+  transition: var(--transition-fast);
+} */
+
+.link > a {
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 16px 36px 22px;
+  background-color: var(--bg);
+  color: var(--text);
+  border: 2px solid var(--text);
+  border-radius: 6px;
+  margin-bottom: 16px;
+  transition: var(--transition-fast);
+  overflow: hidden;
+  position: relative;      
+}
+
+.link:hover > a {
+  background-color: var(--gradient-one);
+  color: var(--bg);
+  border-color: var(--text);
+
+}
+
+.link > a::after {
+    content: '';
+    display: block;
+    height: 7px;
+    width: 100%;
+    background-image: repeating-linear-gradient(
+        45deg,
+        var(--text),
+        var(--text) 1px,
+        transparent 2px,
+        transparent 5px
+    );
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-top: 1px solid var(--text);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-size: 7px 7px;
+}
+
+.link:hover > a::after {
+  background-image: repeating-linear-gradient(
+      45deg,
+      var(--bg),
+      var(--bg)
+      1px,
+      transparent 2px,
+      transparent 5px
+  );
+  border-top: 1px solid var(--text);
+  animation: stripe-slide 12s infinite linear forwards;
+}
+
+@keyframes stripe-slide {
+  0% { background-position: 0% 0; }
+  100% { background-position: 100% 0; }
+}

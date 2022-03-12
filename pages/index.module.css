@@ -1,16 +1,22 @@
-.header {
-  padding-top: 8rem;
-  padding-bottom: 8rem;
-  max-width: 1000px;
-}
-
 .title {
-  font-size: 2.75rem;
+  font-size: 3rem;
   line-height: 1.25;
   margin-bottom: 0;
 }
 
-.subtitle {
+.header p {
   font-size: 1.25rem;
   line-height: 1.5;
+}
+
+.buttonWrapper {
+  display: flex;
+  align-items: center;
+  margin-top: var(--space-md);
+}
+
+@media (min-width: 768px) {
+  .buttonWrapper {
+    justify-content: center;
+  }
 }

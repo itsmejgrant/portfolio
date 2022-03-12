@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import dynamic from 'next/dynamic';
 import Link from 'next/link'
 import Head from 'next/head'
@@ -14,7 +13,6 @@ const TextLogo = dynamic(
 )
 
 const Header = () => {
-  const [textLogo, setTextLogo] = useState('Joe Grant');
 
   return (
     <>
@@ -25,9 +23,7 @@ const Header = () => {
       </Head>
 
       <header className={`container ${styles.header}`}>
-        <h1 className={styles.title}>
-          <TextLogo text={textLogo} setText={setTextLogo} />
-        </h1>
+        <TextLogo styles={styles.title} />  
         <nav className={styles.nav}>
           <ul>
             <li><Link className={styles.link} href="/">Home</Link></li>
